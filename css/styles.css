@@ -1,0 +1,112 @@
+/* ---- Base ---- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #111;
+  background: #fafafa;
+  line-height: 1.6;
+}
+
+/* ---- Hero ---- */
+.hero {
+  min-height: 90vh;
+  padding: 4rem 6vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  margin: 0;
+}
+
+.hero-title span {
+  color: #6b4eff;
+}
+
+.hero-subtitle {
+  max-width: 600px;
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* ---- Sections ---- */
+section {
+  padding: 4rem 6vw;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* ---- Projects ---- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.project-thumb {
+  height: 160px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #6b4eff, #ff7ad9);
+  margin-bottom: 1rem;
+}
+
+/* ---- Tags ---- */
+.tag {
+  display: inline-block;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  background: #f0f0ff;
+  color: #4a3aff;
+}
+
+/* ---- About ---- */
+.about {
+  max-width: 700px;
+}
+
+/* ---- Footer ---- */
+footer {
+  padding: 2rem 6vw;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* ---- Scroll reveal ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
