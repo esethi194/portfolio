@@ -1,0 +1,61 @@
+/* css/tokens.css — Design System Variables */
+
+:root{
+  /* ===================== COLOR PALETTE ===================== */
+  --ink: #1B264F;
+  --blue: #274690;
+  --sky: #576CA8;
+  --graphite: #302B27;
+  --paper: #F5F3F5;
+
+  /* ===================== TYPOGRAPHY ===================== */
+  --font-sans: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-serif: ui-serif, Georgia, "Times New Roman", serif;
+
+  /* Type scale */
+  --h1: clamp(3rem, 6vw, 5rem);
+  --h2: clamp(1.9rem, 2.3vw, 2.2rem);
+  --body: 1.06rem;
+  --body-lg: 1.12rem;
+
+  /* ===================== LAYOUT ===================== */
+  --radius: 20px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --max-width: 1100px;
+  --spacing-xs: 0.35rem;
+  --spacing-sm: 0.65rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2.5rem;
+
+  /* ===================== SEMANTIC TOKENS ===================== */
+  /* Backgrounds */
+  --bg: linear-gradient(180deg, #EEF1F8 0%, #E6EBF5 60%, #E3E8F2 100%);
+  --card: rgba(255, 255, 255, 0.84);
+  
+  /* Text colors */
+  --text: var(--graphite);
+  --text-muted: rgba(27, 38, 79, 0.72);
+  --text-subtle: rgba(48, 43, 39, 0.78);
+  
+  /* Lines & borders */
+  --line: rgba(48, 43, 39, 0.12);
+  
+  /* Accents */
+  --accent: var(--blue);
+  --accent-light: var(--sky);
+  --accent-dark: var(--ink);
+
+  /* ===================== SHADOWS ===================== */
+  --shadow-sm: 0 14px 28px rgba(27, 38, 79, 0.16);
+  --shadow-md: 0 18px 50px rgba(27, 38, 79, 0.18);
+  --shadow-lg: 0 18px 55px rgba(27, 38, 79, 0.14);
+  --shadow-xl: 0 28px 78px rgba(27, 38, 79, 0.22);
+
+  /* ===================== TRANSITIONS ===================== */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.25s ease;
+  --transition-slow: 0.28s ease;
+  --transition-reveal: 0.6s ease;
+}

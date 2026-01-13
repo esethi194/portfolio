@@ -1,0 +1,312 @@
+<!-- case-study-template.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[Project Title] — Esha Sethi</title>
+  <meta name="description" content="Case study: [One-line project description]" />
+  
+  <!-- Modular CSS Architecture -->
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body>
+  <!-- Top Nav -->
+  <header class="topbar">
+    <a class="brand" href="./index.html" aria-label="Home">
+      <span class="star" aria-hidden="true">*</span>
+      <span class="brand-name">Esha Sethi</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="./index.html#home">Home</a>
+      <a href="./index.html#about">About</a>
+      <a href="./index.html#work">Projects</a>
+      <a href="./index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- CASE STUDY HERO -->
+    <section class="hero" style="min-height: 60vh;">
+      <div class="hero-bg" aria-hidden="true">
+        <svg viewBox="0 0 1200 500" preserveAspectRatio="none">
+          <path d="M0,120 C220,60 380,170 600,120 C820,70 980,170 1200,110 L1200,0 L0,0 Z"></path>
+          <path d="M0,220 C220,150 380,280 600,210 C820,140 980,270 1200,200 L1200,0 L0,0 Z"></path>
+          <path d="M0,340 C220,260 380,380 600,320 C820,260 980,370 1200,310 L1200,0 L0,0 Z"></path>
+        </svg>
+      </div>
+
+      <div class="grain" aria-hidden="true"></div>
+      <div class="grid-overlay" aria-hidden="true"></div>
+
+      <div class="container narrow">
+        <div class="hero-copy" style="max-width: 100%;">
+          <p class="kicker">[Project Type — UX • Frontend • Systems]</p>
+
+          <h1 class="hero-title" style="font-size: clamp(2.5rem, 5vw, 3.5rem);">
+            [Project Title]
+          </h1>
+
+          <p class="hero-subtitle">
+            [One-line description of what this project is and what it does]
+          </p>
+
+          <div class="micro-row" aria-label="Project details">
+            <span class="micro">Role: [Your Role]</span>
+            <span class="micro">Timeline: [X months]</span>
+            <span class="micro">Tools: [Tools/Tech]</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM STATEMENT -->
+    <section class="section section-tight">
+      <div class="container narrow">
+        <div class="about-card reveal">
+          <h2 class="section-title">Problem</h2>
+          
+          <p class="about-text">
+            [What problem existed? Who experienced it? Why was it inefficient/confusing/broken?]
+          </p>
+
+          <p class="about-text">
+            [Before this system existed, what was painful or broken?]
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTEXT & CONSTRAINTS -->
+    <section class="section section-tight">
+      <div class="container narrow">
+        <div class="about-card reveal">
+          <h2 class="section-title">Context & Constraints</h2>
+          
+          <p class="about-text">
+            [Stakeholders, technical constraints, time constraints, platform limitations]
+          </p>
+
+          <p class="about-text">
+            <strong>Key constraints:</strong>
+          </p>
+          <ul style="margin: 0 0 1rem 1.5rem; color: rgba(48,43,39,0.88); font-size: var(--body-lg); line-height: 1.75;">
+            <li>[Constraint 1]</li>
+            <li>[Constraint 2]</li>
+            <li>[Constraint 3]</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- GOALS & SUCCESS CRITERIA -->
+    <section class="section section-tight">
+      <div class="container narrow">
+        <div class="about-card reveal">
+          <h2 class="section-title">Goals & Success Criteria</h2>
+          
+          <p class="about-text">
+            [Brief intro to what you wanted to achieve]
+          </p>
+
+          <ul style="margin: 0 0 1rem 1.5rem; color: rgba(48,43,39,0.88); font-size: var(--body-lg); line-height: 1.75;">
+            <li>[Goal 1 — e.g., Reduce manual admin work]</li>
+            <li>[Goal 2 — e.g., Make system logic transparent]</li>
+            <li>[Goal 3 — e.g., Prevent edge-case failures]</li>
+            <li>[Goal 4 — e.g., Create clear user experience]</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS / APPROACH -->
+    <section class="section">
+      <div class="container narrow">
+        <h2 class="section-title reveal">Process & Approach</h2>
+
+        <!-- Discovery & Mapping -->
+        <div class="about-card reveal" style="margin-bottom: 1.5rem;">
+          <h3 style="margin: 0 0 0.8rem; font-size: 1.3rem; color: var(--graphite);">Discovery & Mapping</h3>
+          
+          <p class="about-text">
+            [What you analyzed, existing flows, pain points, system diagrams]
+          </p>
+
+          <p class="about-text">
+            [How you mapped out the problem space]
+          </p>
+        </div>
+
+        <!-- Design Decisions -->
+        <div class="about-card reveal" style="margin-bottom: 1.5rem;">
+          <h3 style="margin: 0 0 0.8rem; font-size: 1.3rem; color: var(--graphite);">Design Decisions</h3>
+          
+          <p class="about-text">
+            [Why you structured the system the way you did]
+          </p>
+
+          <p class="about-text">
+            [Key UX decisions behind automation steps or flows]
+          </p>
+        </div>
+
+        <!-- Iteration & Testing -->
+        <div class="about-card reveal">
+          <h3 style="margin: 0 0 0.8rem; font-size: 1.3rem; color: var(--graphite);">Iteration & Testing</h3>
+          
+          <p class="about-text">
+            [What broke, what you refined, what you learned mid-build]
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUTION -->
+    <section class="section section-tight">
+      <div class="container narrow">
+        <div class="about-card reveal">
+          <h2 class="section-title">Solution</h2>
+          
+          <p class="about-text">
+            [Overall system architecture, key components, how data moves]
+          </p>
+
+          <p class="about-text">
+            <strong>Key components:</strong>
+          </p>
+          <ul style="margin: 0 0 1rem 1.5rem; color: rgba(48,43,39,0.88); font-size: var(--body-lg); line-height: 1.75;">
+            <li>[Component 1 — what it does]</li>
+            <li>[Component 2 — what it does]</li>
+            <li>[Component 3 — what it does]</li>
+          </ul>
+
+          <p class="about-text">
+            [How users experience it, how admins interact with it]
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUTCOME & IMPACT -->
+    <section class="section section-tight">
+      <div class="container narrow">
+        <div class="about-card reveal">
+          <h2 class="section-title">Outcome & Impact</h2>
+          
+          <p class="about-text">
+            [What improved, what worked well, feedback received]
+          </p>
+
+          <p class="about-text">
+            [How the system is used now, measurable improvements if any]
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- REFLECTION & LEARNINGS -->
+    <section class="section section-tight">
+      <div class="container narrow">
+        <div class="about-card reveal">
+          <h2 class="section-title">Reflection & Learnings</h2>
+          
+          <p class="about-text">
+            [What you learned from this project]
+          </p>
+
+          <p class="about-text">
+            [What you'd improve if you rebuilt it]
+          </p>
+
+          <p class="about-text">
+            [What this project says about how you think and work]
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPTIONAL: Links / Next Steps -->
+    <section class="section section-tight">
+      <div class="container narrow">
+        <div class="contact-card reveal">
+          <div class="contact-head">
+            <h2 class="section-title">Project Links</h2>
+            <p class="muted">
+              [Optional: Add links to live demo, repo, prototype, etc.]
+            </p>
+          </div>
+
+          <div class="about-actions">
+            <a class="btn" href="#" target="_blank" rel="noopener">Live Demo</a>
+            <a class="btn" href="#" target="_blank" rel="noopener">GitHub Repo</a>
+          </div>
+        </div>
+
+        <!-- Back to Projects -->
+        <div style="margin-top: 2rem; text-align: center;">
+          <a class="btn primary" href="./index.html#work">← Back to All Projects</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <p class="footer-name">Esha Sethi</p>
+        <p class="footer-tagline">UX • Frontend • Systems</p>
+        <p class="footer-note">Building thoughtful digital experiences</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="./index.html#home">Home</a>
+        <a href="./index.html#about">About</a>
+        <a href="./index.html#work">Projects</a>
+        <a href="./index.html#contact">Contact</a>
+      </nav>
+    </div>
+
+    <div class="footer-bar">
+      <div class="container footer-bar-inner">
+        <p class="footer-legal">© <span id="year"></span> Esha Sethi • Designed + built with care ✦</p>
+
+        <div class="footer-icons" aria-label="Social links">
+          <a class="icon-pill" href="mailto:eshasethi194@gmail.com" aria-label="Email">
+            <img src="./assets/images/icons/email_icon.png" alt="" width="18" height="18">
+          </a>
+          <a class="icon-pill" href="https://www.linkedin.com/in/eshasethi194" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <img src="./assets/images/icons/linkedin_icon.png" alt="" width="18" height="18">
+          </a>
+          <a class="icon-pill" href="https://github.com/esethi194" target="_blank" rel="noopener" aria-label="GitHub">
+            <img src="./assets/images/icons/github_icon.png" alt="" width="18" height="18">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Update year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Scroll reveal animation
+    const reveals = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

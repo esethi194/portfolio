@@ -1,151 +1,280 @@
-<!DOCTYPE html>
+<!-- index.html -->
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Esha Sethi — UX Engineer</title>
-  <meta name="description" content="UX Engineer and designer building clear, scalable systems behind the UX." />
-  <link rel="stylesheet" href="css/styles.css" />
-  <script src="./js/script.js"></script>
+  <title>Esha Sethi — UX / Frontend</title>
+  <meta name="description" content="Esha Sethi — UX + Frontend. Building thoughtful, reliable systems and human-centered experiences." />
+  
+  <!-- Modular CSS Architecture -->
+  <link rel="stylesheet" href="./css/styles.css" />
 </head>
 
 <body>
   <!-- Top Nav -->
   <header class="topbar">
-    <a class="brand" href="index.html" aria-label="Home">
-      <span class="brand-mark" aria-hidden="true"></span>
+    <a class="brand" href="./index.html" aria-label="Home">
+      <span class="star" aria-hidden="true">*</span>
       <span class="brand-name">Esha Sethi</span>
     </a>
 
-    <nav class="nav">
-      <a href="#work">Work</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#home">Home</a>
       <a href="#about">About</a>
+      <a href="#work">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- Hero -->
-  <main>
+  <main id="home">
+    <!-- HERO -->
     <section class="hero">
-      <div class="hero-grid">
-        <div class="hero-copy reveal">
-          <p class="kicker">UX Engineer • Frontend • Systems</p>
+      <div class="hero-bg" aria-hidden="true">
+        <svg viewBox="0 0 1200 500" preserveAspectRatio="none">
+          <path d="M0,120 C220,60 380,170 600,120 C820,70 980,170 1200,110 L1200,0 L0,0 Z"></path>
+          <path d="M0,220 C220,150 380,280 600,210 C820,140 980,270 1200,200 L1200,0 L0,0 Z"></path>
+          <path d="M0,340 C220,260 380,380 600,320 C820,260 980,370 1200,310 L1200,0 L0,0 Z"></path>
+        </svg>
+      </div>
+
+      <div class="grain" aria-hidden="true"></div>
+      <div class="grid-overlay" aria-hidden="true"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">UX • Frontend • Systems</p>
+
           <h1 class="hero-title">
-            Designing systems<br />
-            <span class="accent">behind the UX</span>
+            Hi, I'm<br />
+            Esha Sethi<span class="star" aria-hidden="true">!</span>
           </h1>
+
           <p class="hero-subtitle">
-            I build human-centered automation and interaction systems that are
-            clear, reliable, and maintainable — with a focus on admin clarity and user experience.
+            I'm a creative technologist designing thoughtful, human-centered tech.
+            I build systems behind the UX — from automation workflows to interactive experiences.
+          </p>
+
+          <p class="hero-personal">
+            I focus on making complex systems feel understandable, steady, and human.
           </p>
 
           <div class="hero-actions">
-            <a class="btn primary" href="#work">View Work</a>
-            <a class="btn" href="#contact">Contact</a>
+            <a class="btn primary" href="#work">View Projects</a>
+            <a class="btn" href="#contact">Get in touch</a>
           </div>
 
-          <div class="meta">
-            <span class="chip">Available Summer 2026</span>
-            <span class="chip">SF / Remote</span>
+          <div class="micro-row" aria-label="Highlights">
+            <span class="micro">UX • Frontend • Systems</span>
+            <span class="micro">Hand-coded portfolio</span>
+            <span class="micro">Interested in impact-driven work</span>
           </div>
         </div>
 
-        <div class="hero-art reveal" aria-hidden="true">
-          <!-- Optional: replace this with your own image later -->
-          <div class="art-panel">
-            <div class="art-noise"></div>
-            <div class="art-glow"></div>
-            <div class="art-grid"></div>
+        <div class="hero-photo">
+          <div class="photo-frame" aria-label="Portrait">
+            <img
+              src="./assets/images/headshot.jpg"
+              alt="Portrait of Esha Sethi"
+              onerror="this.style.display='none'; this.parentElement.classList.add('placeholder');"
+            />
+          </div>
+
+          <p class="photo-caption">
+            <span class="dot" aria-hidden="true"></span>
+            Tempe → wherever the work is
+          </p>
+        </div>
+      </div>
+
+      <a class="scroll-down" href="#about" aria-label="Scroll down">
+        <span class="scroll-label">Scroll to learn more</span>
+        <span class="scroll-icon" aria-hidden="true">↓</span>
+      </a>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section section-tight">
+      <div class="container narrow">
+        <header class="section-head reveal">
+          <h2 class="section-title">A little about me</h2>
+          <p class="section-subtitle">UX + frontend, with a systems brain.</p>
+        </header>
+
+        <div class="about-card reveal">
+          <p class="about-text">
+            I'm a UX designer and frontend developer based in Tempe, Arizona, with a background
+            in media arts and sciences. My work sits at the intersection of design, engineering,
+            and systems thinking.
+          </p>
+
+          <p class="about-text">
+            I've worked on projects connected to global brands and nonprofits, contributing to digital experiences
+            across skincare, music, and clean water initiatives, with a focus on clarity,
+            accessibility, and long-term maintainability.
+          </p>
+
+          <p class="about-text">
+            I'm most interested in roles where I can design and build thoughtful user experiences —
+            especially systems that reduce manual work, support teams behind the scenes,
+            and scale responsibly over time.
+          </p>
+
+          <div class="about-actions">
+            <a class="btn" href="#contact">Get in touch</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Work -->
+    <!-- WORK -->
     <section id="work" class="section">
-      <div class="section-head">
-        <h2 class="section-title">Selected Work</h2>
-        <p class="section-subtitle">A few projects that show how I think and ship.</p>
-      </div>
+      <div class="container">
+        <h2 class="section-title reveal">Projects</h2>
 
-      <div class="cards">
-        <a class="card reveal" href="case-surprise-guest.html">
-          <div class="thumb thumb-gradient">
-            <!-- Later: replace with <img> thumbnail -->
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">Surprise Podcast Guest</h3>
-            <p class="card-desc">
-              Designed a phased system for intake → selection → communication → feedback,
-              reducing manual coordination and improving reliability.
-            </p>
-            <div class="tags">
-              <span class="tag">Systems UX</span>
-              <span class="tag">Automation</span>
-              <span class="tag">Frontend</span>
+        <div class="work-grid">
+          <a class="work-card reveal" href="template.html" style="--delay: 0;">
+            <div class="work-media gradient" aria-hidden="true"></div>
+            <div class="work-body">
+              <h3>Surprise Podcast Guest</h3>
+              <p>Phased system: intake → selection → email → feedback. Built for reliability + admin clarity.</p>
+              <span class="pill">Systems UX</span>
+              <span class="pill">Automation</span>
             </div>
-          </div>
-        </a>
+          </a>
 
-        <a class="card reveal" href="#" aria-disabled="true" onclick="return false;">
-          <div class="thumb thumb-muted"></div>
-          <div class="card-body">
-            <h3 class="card-title">Game / Interaction Project</h3>
-            <p class="card-desc">
-              Coming soon — interaction design + implementation with a focus on emotional clarity.
-            </p>
-            <div class="tags">
-              <span class="tag">Interaction</span>
-              <span class="tag">Game</span>
+          <a class="work-card reveal" href="#" onclick="return false;" aria-disabled="true" style="--delay: 1;">
+            <div class="work-media neutral" aria-hidden="true"></div>
+            <div class="work-body">
+              <h3>Day in My Life: Sober Edition</h3>
+              <p>Playable narrative game exploring addiction + recovery through interaction and reflection.</p>
+              <span class="pill">Game Dev</span>
+              <span class="pill">Interaction</span>
             </div>
-          </div>
-        </a>
+          </a>
 
-        <a class="card reveal" href="#" aria-disabled="true" onclick="return false;">
-          <div class="thumb thumb-muted"></div>
-          <div class="card-body">
-            <h3 class="card-title">Design for Social Good</h3>
-            <p class="card-desc">
-              Coming soon — systems + UX work designed around impact and accessibility.
-            </p>
-            <div class="tags">
-              <span class="tag">Impact</span>
-              <span class="tag">Accessibility</span>
+          <a class="work-card reveal" href="#" onclick="return false;" aria-disabled="true" style="--delay: 2;">
+            <div class="work-media neutral" aria-hidden="true"></div>
+            <div class="work-body">
+              <h3>Charity: Water Landing Page</h3>
+              <p>Landing page targeting students with transparency-first messaging and clear conversion flow.</p>
+              <span class="pill">UX</span>
+              <span class="pill">Frontend</span>
             </div>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="section">
-      <div class="two-col reveal">
-        <div>
-          <h2 class="section-title">About</h2>
-          <p class="lead">
-            I’m a developer behind the UX. I like messy problems — where the real work is making a system
-            understandable, reliable, and kind to the humans using it.
-          </p>
-          <p>
-            I’m currently finishing my degree at ASU and building real systems for clients and teams.
-            My work sits between UX, frontend, and operational design.
-          </p>
-        </div>
-
-        <div class="about-box">
-          <h3 class="mini-title">Focus</h3>
-          <ul class="list">
-            <li>Systems UX + admin clarity</li>
-            <li>Frontend implementation</li>
-            <li>Accessibility + maintainable logic</li>
-          </ul>
-
-          <h3 class="mini-title">Toolbox</h3>
-          <p class="muted">
-            HTML/CSS/JS, Figma, Zapier, Kit, Google Sheets, documentation + walkthroughs
-          </p>
+          </a>
         </div>
       </div>
     </section>
 
-    <
+    <!-- CONTACT -->
+    <section id="contact" class="section section-tight">
+      <div class="container narrow">
+        <div class="contact-card reveal">
+          <div class="contact-head">
+            <h2 class="section-title">Let's connect</h2>
+            <p class="muted">
+              I'm open to discussing UX design, frontend development, systems architecture, and collaboration opportunities.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-item">
+              <p class="contact-label">Email</p>
+              <a class="contact-link" href="mailto:eshasethi194@gmail.com">
+                eshasethi194@gmail.com
+              </a>
+            </div>
+
+            <div class="contact-item">
+              <p class="contact-label">LinkedIn</p>
+              <a
+                class="contact-link"
+                href="https://www.linkedin.com/in/eshasethi194"
+                target="_blank"
+                rel="noopener"
+              >
+                linkedin.com/in/eshasethi194
+              </a>
+            </div>
+
+            <div class="contact-item">
+              <p class="contact-label">GitHub</p>
+              <a
+                class="contact-link"
+                href="https://github.com/esethi194"
+                target="_blank"
+                rel="noopener"
+              >
+                github.com/esethi194
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-foot">
+            <span class="micro">📍 Tempe, AZ</span>
+            <span class="micro">📅 Available: Summer 2026 internships</span>
+            <span class="micro">🎓 Full-time after graduation (2027)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <p class="footer-name">Esha Sethi</p>
+        <p class="footer-tagline">UX • Frontend • Systems</p>
+        <p class="footer-note">Building thoughtful digital experiences</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#work">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <div class="footer-bar">
+      <div class="container footer-bar-inner">
+        <p class="footer-legal">© <span id="year"></span> Esha Sethi • Designed + built with care ✦</p>
+
+        <div class="footer-icons" aria-label="Social links">
+          <a class="icon-pill" href="mailto:eshasethi194@gmail.com" aria-label="Email">
+            <img src="./assets/images/icons/email_icon.png" alt="" width="18" height="18">
+          </a>
+          <a class="icon-pill" href="https://www.linkedin.com/in/eshasethi194" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <img src="./assets/images/icons/linkedin_icon.png" alt="" width="18" height="18">
+          </a>
+          <a class="icon-pill" href="https://github.com/esethi194" target="_blank" rel="noopener" aria-label="GitHub">
+            <img src="./assets/images/icons/github_icon.png" alt="" width="18" height="18">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Update year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Scroll reveal animation
+    const reveals = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
