@@ -223,7 +223,7 @@
 
 /* ===================== FOOTER LAYOUT ===================== */
 .site-footer{
-  margin-top: 3rem;
+  margin-top: 1rem;
   position: relative;
   color: rgba(245, 243, 245, 0.88);
   background:
@@ -235,7 +235,7 @@
 }
 
 .footer-top{
-  padding: 2.5rem 6vw 1.5rem;
+  padding: .5rem 6vw 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;

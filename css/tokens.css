@@ -3,8 +3,8 @@
 :root{
   /* ===================== COLOR PALETTE ===================== */
   --ink: #1B264F;
-  --blue: #274690;
-  --sky: #576CA8;
+  --blue: #373e9a;
+  --sky: #5379b3;
   --graphite: #302B27;
   --paper: #F5F3F5;
 
@@ -31,7 +31,7 @@
 
   /* ===================== SEMANTIC TOKENS ===================== */
   /* Backgrounds */
-  --bg: linear-gradient(180deg, #EEF1F8 0%, #E6EBF5 60%, #E3E8F2 100%);
+  --bg: linear-gradient(180deg, #dcd9fd 0%, #9eabd8 40%, #7894cb 100%);
   --card: rgba(255, 255, 255, 0.84);
   
   /* Text colors */

@@ -34,7 +34,7 @@
         <!-- Project Title & Meta -->
         <div style="margin-bottom: 2rem;">
           <p class="kicker" style="color: rgba(245, 243, 245, 0.65); margin-bottom: 0.8rem;">[UX • Frontend • Systems]</p>
-          <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); color: var(--paper); margin: 0 0 1rem; font-family: var(--font-serif); font-weight: 650; letter-spacing: -0.02em; line-height: 1.1;">
+          <h1 style="font-size: clamp(2rem, 4vw, 3.2rem); color: var(--paper); margin: 0 0 1rem; font-family: var(--font-serif); font-weight: 650; letter-spacing: -0.02em; line-height: 1.1;">
             [Project Title]
           </h1>
           <p style="color: rgba(245, 243, 245, 0.75); font-size: 1.15rem; max-width: 65ch; margin: 0; line-height: 1.6;">
@@ -70,7 +70,7 @@
           </div>
         </div>
 
-        <!-- Screenshot/Visual (Medium Size) -->
+        <!-- Screenshot Carousel -->
         <div style="
           background: linear-gradient(135deg, rgba(87, 108, 168, 0.12), rgba(39, 70, 144, 0.08));
           border-radius: 20px;
@@ -79,26 +79,128 @@
           box-shadow: 
             0 8px 24px rgba(0, 0, 0, 0.3),
             0 16px 48px rgba(0, 0, 0, 0.2);
+          position: relative;
         ">
-          <!-- Replace with actual screenshot -->
-          <div style="
+          <!-- Carousel Container -->
+          <div id="carousel" style="
             aspect-ratio: 16 / 9;
-            background: 
-              radial-gradient(circle at 30% 40%, rgba(87, 108, 168, 0.15), transparent 60%),
-              radial-gradient(circle at 70% 60%, rgba(39, 70, 144, 0.12), transparent 60%),
-              linear-gradient(135deg, rgba(48, 43, 39, 0.04), rgba(48, 43, 39, 0.02));
             border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgba(245, 243, 245, 0.50);
-            font-size: 1rem;
-            text-align: center;
-            border: 1px solid rgba(245, 243, 245, 0.08);
             overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(245, 243, 245, 0.08);
           ">
-            <img src="./assets/images/[project-screenshot].png" alt="Project screenshot" style="width: 100%; height: 100%; object-fit: cover; display: block;" 
-              onerror="this.style.display='none'; this.parentElement.innerHTML='Add screenshot: ./assets/images/[project-screenshot].png';">
+            <!-- Slides -->
+            <div class="carousel-slide active" style="
+              position: absolute;
+              inset: 0;
+              opacity: 0;
+              transition: opacity 0.5s ease;
+            ">
+              <img src="./assets/images/[project-screenshot-1].png" alt="Project screenshot 1" style="width: 100%; height: 100%; object-fit: cover; display: block;" 
+                onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:rgba(245,243,245,0.50);text-align:center;background:radial-gradient(circle at 30% 40%, rgba(87, 108, 168, 0.15), transparent 60%),radial-gradient(circle at 70% 60%, rgba(39, 70, 144, 0.12), transparent 60%),linear-gradient(135deg, rgba(48, 43, 39, 0.04), rgba(48, 43, 39, 0.02));\'>Add screenshot 1: ./assets/images/[project-screenshot-1].png</div>';">
+            </div>
+            <div class="carousel-slide" style="
+              position: absolute;
+              inset: 0;
+              opacity: 0;
+              transition: opacity 0.5s ease;
+            ">
+              <img src="./assets/images/[project-screenshot-2].png" alt="Project screenshot 2" style="width: 100%; height: 100%; object-fit: cover; display: block;" 
+                onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:rgba(245,243,245,0.50);text-align:center;background:radial-gradient(circle at 30% 40%, rgba(87, 108, 168, 0.15), transparent 60%),radial-gradient(circle at 70% 60%, rgba(39, 70, 144, 0.12), transparent 60%),linear-gradient(135deg, rgba(48, 43, 39, 0.04), rgba(48, 43, 39, 0.02));\'>Add screenshot 2: ./assets/images/[project-screenshot-2].png</div>';">
+            </div>
+            <div class="carousel-slide" style="
+              position: absolute;
+              inset: 0;
+              opacity: 0;
+              transition: opacity 0.5s ease;
+            ">
+              <img src="./assets/images/[project-screenshot-3].png" alt="Project screenshot 3" style="width: 100%; height: 100%; object-fit: cover; display: block;" 
+                onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:rgba(245,243,245,0.50);text-align:center;background:radial-gradient(circle at 30% 40%, rgba(87, 108, 168, 0.15), transparent 60%),radial-gradient(circle at 70% 60%, rgba(39, 70, 144, 0.12), transparent 60%),linear-gradient(135deg, rgba(48, 43, 39, 0.04), rgba(48, 43, 39, 0.02));\'>Add screenshot 3: ./assets/images/[project-screenshot-3].png</div>';">
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button id="prevBtn" style="
+              position: absolute;
+              left: 1rem;
+              top: 50%;
+              transform: translateY(-50%);
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              background: rgba(255, 255, 255, 0.90);
+              border: none;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 1.2rem;
+              color: var(--graphite);
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+              transition: all 0.2s ease;
+              z-index: 10;
+            " onmouseover="this.style.transform='translateY(-50%) scale(1.1)'; this.style.background='rgba(255, 255, 255, 1)';" 
+               onmouseout="this.style.transform='translateY(-50%) scale(1)'; this.style.background='rgba(255, 255, 255, 0.90)';">
+              ←
+            </button>
+            <button id="nextBtn" style="
+              position: absolute;
+              right: 1rem;
+              top: 50%;
+              transform: translateY(-50%);
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              background: rgba(255, 255, 255, 0.90);
+              border: none;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 1.2rem;
+              color: var(--graphite);
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+              transition: all 0.2s ease;
+              z-index: 10;
+            " onmouseover="this.style.transform='translateY(-50%) scale(1.1)'; this.style.background='rgba(255, 255, 255, 1)';" 
+               onmouseout="this.style.transform='translateY(-50%) scale(1)'; this.style.background='rgba(255, 255, 255, 0.90)';">
+              →
+            </button>
+
+            <!-- Dots Indicator -->
+            <div id="dotsContainer" style="
+              position: absolute;
+              bottom: 1rem;
+              left: 50%;
+              transform: translateX(-50%);
+              display: flex;
+              gap: 0.5rem;
+              z-index: 10;
+            ">
+              <span class="dot active" data-slide="0" style="
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.90);
+                cursor: pointer;
+                transition: all 0.3s ease;
+              "></span>
+              <span class="dot" data-slide="1" style="
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.40);
+                cursor: pointer;
+                transition: all 0.3s ease;
+              "></span>
+              <span class="dot" data-slide="2" style="
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.40);
+                cursor: pointer;
+                transition: all 0.3s ease;
+              "></span>
+            </div>
           </div>
         </div>
       </div>
@@ -293,6 +395,76 @@
   <script>
     // Update year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Carousel functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.dot');
+    let autoRotate;
+
+    function showSlide(index) {
+      // Remove active class from all
+      slides.forEach(slide => slide.style.opacity = '0');
+      dots.forEach(dot => {
+        dot.style.background = 'rgba(255, 255, 255, 0.40)';
+        dot.classList.remove('active');
+      });
+
+      // Add active to current
+      slides[index].style.opacity = '1';
+      dots[index].style.background = 'rgba(255, 255, 255, 0.90)';
+      dots[index].classList.add('active');
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function startAutoRotate() {
+      autoRotate = setInterval(nextSlide, 5000); // 5 seconds
+    }
+
+    function stopAutoRotate() {
+      clearInterval(autoRotate);
+    }
+
+    // Navigation buttons
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      stopAutoRotate();
+      nextSlide();
+      startAutoRotate();
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      stopAutoRotate();
+      prevSlide();
+      startAutoRotate();
+    });
+
+    // Dot navigation
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        stopAutoRotate();
+        currentSlide = index;
+        showSlide(currentSlide);
+        startAutoRotate();
+      });
+    });
+
+    // Pause on hover
+    const carousel = document.getElementById('carousel');
+    carousel.addEventListener('mouseenter', stopAutoRotate);
+    carousel.addEventListener('mouseleave', startAutoRotate);
+
+    // Initialize
+    showSlide(0);
+    startAutoRotate();
 
     // Scroll reveal animation
     const reveals = document.querySelectorAll(".reveal");
