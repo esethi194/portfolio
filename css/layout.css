@@ -63,7 +63,7 @@
 }
 
 .section-tight{
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
 .section::before{
@@ -205,6 +205,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.2rem;
+  justify-items: center;
+  justify-content: center;
 }
 
 /* ===================== CONTACT GRID ===================== */

@@ -8,23 +8,20 @@
   <meta name="description" content="A narrative-driven game about addiction, recovery, and the ongoing act of choosing yourself." />
   
   <!-- Modular CSS Architecture -->
-  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/styles.css"/>
 <style>
     :root{
-      --scroll-offset: 75px;
+      --scroll-offset: 75px; 
     }
 
-    /* only apply to your case sections */
     #overview, #problem, #context, #goals, #process, #solution, #outcome, #reflection{
-      scroll-margin-top: var(--scroll-offset);
-    }
-
-    /* keep smooth scroll */
+        scroll-margin-top: var(--scroll-offset);
+      }
+    
     html{
       scroll-behavior: smooth;
     }
-
-</style>
+  </style>
 </head>
 <script src="./js/site.js" defer></script>
 
@@ -114,7 +111,7 @@
             <div class="carousel-slide active" style="
               position: absolute;
               inset: 0;
-              opacity: 0;
+              opacity: 1;
               transition: opacity 0.5s ease;
             ">
               <img src="./assets/images/menu.png" alt="Day in My Life menu screen" style="width: 100%; height: 100%; object-fit: cover; display: block;" 
@@ -236,7 +233,8 @@
           <div class="case-sidebar">
         <h2 class="case-sidebar__title">Overview</h2>
         <nav class="case-toc">
-          <a href="#problem" class="is-active">Problem</a>
+          <a href="#overview" class="is-active">Overview</a>
+          <a href="#problem">Problem</a>
           <a href="#context">Context</a>
           <a href="#goals">Goals</a>
           <a href="#process">Process</a>
@@ -266,7 +264,7 @@
             <div id="problem">
               <h3 style="margin: 0 0 1rem; font-size: 1.8rem; color: var(--graphite); font-family: var(--font-serif);">The Problem</h3>
               <p style="margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                Most media representations of addiction and recovery fall into extremes: either dramatic collapse followed by redemption, or a clean, linear success story. Both oversimplify what recovery actually looks like.
+                Most media representations of addiction and recovery fall into extremes: either dramatic collapse followed by redemption, or a clean, linear success story. Both oversimplify the reality of recovery.
               </p>
               <p style="margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
                 In reality, recovery is ongoing, frustrating, and often invisible. Relapse is common, emotionally loaded, and rarely framed with empathy. There are very few interactive experiences that reflect this reality—especially ones that center internal struggle rather than external punishment.
@@ -355,7 +353,7 @@
                     <strong>Symbolic over literal:</strong> Enemies are exaggerated manifestations of internal and social pressure. Jocks throw red solo cups to represent normalized drinking culture, druggies throw pill bottles as temptation, and mean girls attack with words, embodying internalized stigma.
                   </p>
                   <p style="margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                    <strong>Tone: playful, but not trivial:</strong> Humor functions as a coping language, not a joke. The game allows players to feel discomfort and levity at the same time—reflecting how many people navigate difficult realities.
+                    <strong>Tone: playful, not trivial:</strong> Humor functions as a coping language, not a joke. The game allows players to feel discomfort and levity at the same time—reflecting how many people navigate difficult realities.
                   </p>
                   <p style="margin: 0; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
                     <strong>Core mechanic choice:</strong> The final boss can only be defeated using the Mirror Shard, a mechanic that forces confrontation with the self. Traditional combat alone is ineffective. Awareness and reflection are required to move forward.
@@ -393,12 +391,15 @@
                 </ul>
               </div>
 
-              <p style="margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                <strong>Core Loop:</strong> Face temptation → manage sobriety → complete tasks → confront the self → repeat
-              </p>
+              <div style="background: rgba(39, 70, 144, 0.05); border-left: 3px solid var(--blue); padding: 1.2rem 1.5rem; border-radius: 8px; margin-top: 1.5rem;">
+              <p style="margin: 0 0 0.8rem; font-weight: 600; color: var(--graphite);">Core Loop</p>
               <p style="margin: 0; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                Progress strengthens the player's capacity to continue, rather than eliminating difficulty entirely.
+                Face temptation → manage sobriety → complete tasks → confront the self → repeat
               </p>
+            </div>
+            <p style="margin: 1.5rem 0 0; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
+              Progress strengthens the player's capacity to continue, rather than eliminating difficulty entirely.
+            </p>
             </div>
 
             <!-- Outcome -->
@@ -416,7 +417,7 @@
             <div id="reflection">
               <h3 style="margin: 0 0 1rem; font-size: 1.8rem; color: var(--graphite); font-family: var(--font-serif);">Reflection & Learnings</h3>
               <p style="margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                This project reinforced that UX extends beyond interfaces—systems are interfaces. Emotional friction can be intentional and meaningful. Iteration and playtesting are where clarity emerges.
+                This project reinforced that systems are interfaces—UX extends beyond screens. Emotional friction can be intentional and meaningful. Iteration and playtesting are where clarity emerges.
               </p>
               <p style="margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
                 If I were to rebuild this project, I would improve visual consistency, expand accessibility considerations, and refine system polish.

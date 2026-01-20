@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Surprise Podcast Guest Experience — Esha Sethi</title>
-  <meta name="description" content="A systems-based experience that automates podcast guest selection and onboarding without operational overhead." />
+  <meta name="description" content="An automated system that lets podcast listeners opt in to become surprise guests—selected fairly, onboarded automatically, with zero manual work for the host." />
   
   <!-- Modular CSS Architecture -->
   <link rel="stylesheet" href="./css/styles.css" />
@@ -19,7 +19,6 @@
     scroll-margin-top: var(--scroll-offset);
   }
 
-  /* keep smooth scroll */
   html{
     scroll-behavior: smooth;
   }
@@ -58,7 +57,7 @@
             Surprise Podcast Guest Experience
           </h1>
           <p style="color: rgba(245, 243, 245, 0.75); font-size: 1.15rem; max-width: 65ch; margin: 0; line-height: 1.6;">
-            A systems-based experience that allows podcast listeners to opt into a fair, automated selection process to participate as a live "surprise guest" — without adding operational overhead for the host.
+            An automated system that lets podcast listeners opt in to become surprise guests—selected fairly, onboarded automatically, with zero manual work for the host.
           </p>
         </div>
 
@@ -259,7 +258,7 @@
                 The Surprise Podcast Guest Experience enables podcast listeners to opt into a shared pool where they may be randomly selected to participate live in an episode alongside a featured expert — covering topics like healing, energy work, and mindfulness.
               </p>
               <p style="margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                The challenge was not just automating selection — it was designing a trust-based, fair, and emotionally safe experience that could run reliably without requiring the host to manually manage signups, tracking, or onboarding.
+                The challenge wasn't just automating selection—it was designing a trust-based, fair, and emotionally safe experience that could run reliably without manual oversight.
               </p>
               <p style="margin: 0; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
                 This system was built for Autumn Carter's podcast, handling end-to-end listener intake, randomized selection, backup management, and automated onboarding.
@@ -270,16 +269,13 @@
             <div id="problem">
               <h3 style="margin: 0 0 1rem; font-size: 1.8rem; color: var(--graphite); font-family: var(--font-serif);">The Problem</h3>
               <p style="margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                Before this system existed, there was no structured way for listeners to participate as live guests.
+                There was no way for listeners to participate as live podcast guests.
               </p>
               <p style="margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                If Autumn tried to do this manually: listeners had no clear way to opt in, there was no central place to track interest, onboarding would require individual emails, selection would be subjective or inconsistent, and the process would not scale beyond one-off attempts.
-              </p>
-              <p style="margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                Because the experience would be recorded and public, the risk of confusion, missed follow-ups, or selecting the wrong participant was especially high.
+                Manual coordination wouldn't scale: tracking interest by topic, managing backups if someone dropped out, and onboarding participants would require constant manual follow-up—impossible for live recordings where failures aren't acceptable.
               </p>
               <p style="margin: 0; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                As a result: listeners missed out on a participatory experience, the podcast couldn't safely experiment with this format, and the operational burden made the idea unrealistic to run manually.
+                <strong>The result:</strong> Listeners couldn't participate, and the format was too risky to try.
               </p>
             </div>
 
@@ -293,7 +289,7 @@
                 <p style="margin: 0 0 0.8rem; font-weight: 600; color: var(--graphite);">Key Constraints</p>
                 <ul style="margin: 0; padding-left: 1.2rem; color: rgba(48, 43, 39, 0.85); line-height: 1.8;">
                   <li>System had to be built on Kit (already central to subscriber workflow)</li>
-                  <li>Zapier automation limited by available triggers and plan constraints</li>
+                  <li>Zapier automation limited by trigger reliability and plan tier</li>
                   <li>Needed to be operable by Autumn without technical intervention</li>
                   <li>Reliability mattered more than complexity — failures during live recordings were unacceptable</li>
                 </ul>
@@ -369,7 +365,7 @@
                     Early versions revealed reliability issues: Zapier triggers failed when events occurred too close together, data updates were not consistently recognized as "new events," and randomization logic worked mathematically but failed operationally.
                   </p>
                   <p style="margin: 0; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                    The system became reliable after introducing timestamp-based triggers down to the millisecond, restructuring how and when rows were considered "new," and simplifying trigger conditions based on how Zapier actually listens for events.
+                    The system became reliable after restructuring how Google Sheets marked entries as "new," simplifying trigger logic, and testing failure scenarios to ensure nothing broke during live recordings.
                   </p>
                 </div>
               </div>
@@ -378,18 +374,29 @@
             <!-- Solution -->
             <div id="solution">
               <h3 style="margin: 0 0 1rem; font-size: 1.8rem; color: var(--graphite); font-family: var(--font-serif);">End-to-End System</h3>
-              <p style="margin: 0 0 1.5rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                <strong>Flow:</strong> Listener signs up through Kit form → data tagged and synced to Google Sheets → Autumn selects topic for upcoming episode → system filters pool → one primary + two backups randomly selected → tags applied in Kit → onboarding emails sent automatically → system resets for next cycle.
+              
+              <p style="margin: 0 0 0.5rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
+                <strong>Flow:</strong>
               </p>
+              <ol style="margin: 0 0 1.5rem; padding-left: 1.5rem; font-size: 1.05rem; line-height: 1.9; color: rgba(48, 43, 39, 0.85);">
+                <li>Listener signs up via Kit form</li>
+                <li>Data synced to Google Sheets tracker</li>
+                <li>Autumn selects topic for upcoming episode</li>
+                <li>System filters pool by interest area</li>
+                <li>One primary + two backups randomly selected</li>
+                <li>Tags applied in Kit</li>
+                <li>Onboarding emails sent automatically</li>
+                <li>System resets for next cycle</li>
+              </ol>
               
               <div style="background: var(--graphite); color: var(--paper); padding: 2rem; border-radius: 16px; margin: 2rem 0;">
                 <p style="margin: 0 0 1rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(245, 243, 245, 0.60);">Key Components</p>
                 <ul style="margin: 0; padding-left: 1.2rem; line-height: 1.9;">
-                  <li><strong>Listener Intake Form (Kit)</strong> — allows listeners to opt in and select up to three interest areas</li>
-                  <li><strong>Google Sheets Tracker</strong> — central source of truth for filtering, randomization, and selection logic</li>
-                  <li><strong>Randomization Logic</strong> — mathematical selection using formulas to ensure fairness</li>
-                  <li><strong>Email Sequences (Kit)</strong> — automated, sequenced emails for confirmation, selection, backups, and prep</li>
-                  <li><strong>Tag-Based State Management</strong> — keeps listener status synchronized across systems</li>
+                  <li><strong>Listener Intake Form (Kit)</strong> — lets listeners opt in and select up to three interest areas</li>
+                  <li><strong>Google Sheets Tracker</strong> — central source of truth for filtering, randomization, and selection</li>
+                  <li><strong>Randomization Logic</strong> — ensures fair selection using formula-based randomization</li>
+                  <li><strong>Email Sequences (Kit)</strong> — automated onboarding emails for confirmation, selection, backups, and prep</li>
+                  <li><strong>Tag-Based State Management</strong> — syncs listener status across systems</li>
                 </ul>
               </div>
             </div>
@@ -398,10 +405,10 @@
             <div id="outcome">
               <h3 style="margin: 0 0 1rem; font-size: 1.8rem; color: var(--graphite); font-family: var(--font-serif);">Outcome & Impact</h3>
               <p style="margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                <strong>Current state:</strong> Built, tested, and ready to run for upcoming podcast episodes. End-to-end walkthrough video confirms system reliability.
+                <strong>Status:</strong> Built, tested, and validated through end-to-end walkthroughs. Ready for production use in upcoming episodes.
               </p>
-              <p style="margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                <strong>Impact:</strong> Eliminated the need to manually track interest, choose participants, or send onboarding emails. Reduced cognitive load for the host during episode planning. Enabled a new, more communal and interactive podcast format.
+              <p style="margin: 0; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
+                <strong>Expected Impact:</strong> Will eliminate manual tracking, selection, and onboarding—freeing the host to focus on content while enabling a more interactive podcast format.
               </p>
             </div>
 
@@ -409,13 +416,13 @@
             <div id="reflection">
               <h3 style="margin: 0 0 1rem; font-size: 1.8rem; color: var(--graphite); font-family: var(--font-serif);">Reflection & Learnings</h3>
               <p style="margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                This project reinforced that UX is not limited to screens. I was designing trust (listeners needed to feel the process was fair), safety (participation involved vulnerability and public sharing), and reliability (live recordings leave no room for silent failures).
+                This project reinforced that <strong>UX is not limited to screens</strong>—I was designing trust (listeners needed to feel the process was fair), safety (participation involved vulnerability), and reliability (live recordings leave no room for failure).
               </p>
               <p style="margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                <strong>Key skills strengthened:</strong> Systems thinking across tools, translating human experience into logic, anticipating edge cases in real-world workflows, and designing for non-technical operators.
+                <strong>What I learned:</strong> How to translate human needs into system logic. How to design for non-technical operators. How to anticipate edge cases in real-world workflows.
               </p>
               <p style="margin: 0; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                <strong>What this project shows:</strong> I can design and build complex, human-centered systems. I work effectively in phases and structure. I think beyond interfaces to the full experience lifecycle.
+                <strong>What this shows:</strong> I can design and build complex, human-centered systems that work reliably in the real world.
               </p>
             </div>
           </div>
