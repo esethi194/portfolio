@@ -1,0 +1,23 @@
+# OS junk
+.DS_Store
+
+# Editor / IDE junk
+.vscode/
+.idea/
+
+# UML / Astah files
+.astah/
+cache/
+
+# Java / build artifacts
+*.jar
+*.class
+*.id
+*.version
+*.info
+
+# Node (if you ever add it)
+node_modules/
+
+# Logs
+*.log

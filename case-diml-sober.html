@@ -10,35 +10,19 @@
   <!-- Modular CSS Architecture -->
   <link rel="stylesheet" href="./css/styles.css" />
 <style>
-html, body {
-  height: 100%;
-}
+    :root{
+      --scroll-offset: 75px;
+    }
 
-body {
-  margin: 0;
-  font-family: var(--font-sans);
-  color: var(--blue);
-  background:
-    radial-gradient(
-      1200px 800px at 20% -10%,
-      rgba(17, 47, 194, 0.35),
-      transparent 60%
-    ),
-    radial-gradient(
-      1000px 700px at 90% 30%,
-      rgba(180, 160, 255, 0.35),
-      transparent 65%
-    ),
-    linear-gradient(
-      180deg,
-      #6d85c2 0%,
-      #a9b6e8 30%,
-      #c4c8f2 55%,
-      #d7d9f7 75%,
-      #e9e9fb 100%
-    );
-  background-attachment: fixed;
-}
+    /* only apply to your case sections */
+    #overview, #problem, #context, #goals, #process, #solution, #outcome, #reflection{
+      scroll-margin-top: var(--scroll-offset);
+    }
+
+    /* keep smooth scroll */
+    html{
+      scroll-behavior: smooth;
+    }
 
 </style>
 </head>

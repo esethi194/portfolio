@@ -9,6 +9,22 @@
   
   <!-- Modular CSS Architecture -->
   <link rel="stylesheet" href="./css/styles.css" />
+  <style>
+  :root{
+    --header-height: 20px; /* adjust if your topbar is taller/shorter */
+  }
+
+  html{
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height);
+  }
+
+  /* Extra safety: ensure sections also respect offset */
+  section[id]{
+    scroll-margin-top: var(--header-height);
+  }
+
+</style>
 </head>
 <script src="./js/site.js" defer></script>
 
@@ -96,7 +112,7 @@
 
     <!-- ABOUT -->
     <section id="about" class="section section-tight">
-      <div class="container narrow">
+      <div class="container about-wide">
         <header class="section-head reveal">
           <h2 class="section-title">A little about me</h2>
           <p class="section-subtitle">UX + frontend, with a systems brain.</p>
@@ -116,7 +132,7 @@
           </p>
 
           <div class="about-actions">
-            <a class="btn" href="#contact">Get in touch</a>
+            <a class="btn primary" href="#contact">Get in touch</a>
           </div>
         </div>
       </div>
@@ -189,7 +205,7 @@
           <div class="contact-grid">
             <div class="contact-item">
               <p class="contact-label">Email</p>
-              <a class="contact-link" href="/cdn-cgi/l/email-protection#583d2b30392b3d2c303169616c183f35393134763b3735">
+              <a class="contact-link" href="mailto:eshasethi194@gmail.com">
                 <span class="__cf_email__" data-cfemail="3055435851435544585901090470575d51595c1e535f5d">[eshasethi194@gmail.com]</span>
               </a>
             </div>
@@ -250,7 +266,7 @@
         <p class="footer-legal">© <span id="year"></span> Esha Sethi • Designed + built with care ✦</p>
 
         <div class="footer-icons" aria-label="Social links">
-          <a class="icon-pill" href="/cdn-cgi/l/email-protection#7217011a130117061a1b434b4632151f131b1e5c111d1f" aria-label="Email">
+          <a class="icon-pill" href="mailto:eshasethi194@gmail.com" aria-label="Email">
             <img src="./assets/images/icons/email_icon.png" alt="" width="18" height="18">
           </a>
           <a class="icon-pill" href="https://www.linkedin.com/in/eshasethi194" target="_blank" rel="noopener" aria-label="LinkedIn">
