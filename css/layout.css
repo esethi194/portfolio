@@ -221,6 +221,23 @@
   gap: 0.35rem;
 }
 
+/* ===================== CASE STUDY LAYOUT ===================== */
+
+.case-layout{
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.case-container{
+  max-width: 1200px;
+}
+
+.section.case-section{
+  padding-top: 4rem;
+}
+
 /* ===================== FOOTER LAYOUT ===================== */
 .site-footer{
   margin-top: 1rem;

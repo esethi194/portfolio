@@ -10,6 +10,7 @@
   <!-- Modular CSS Architecture -->
   <link rel="stylesheet" href="./css/styles.css" />
 </head>
+<script src="./js/site.js" defer></script>
 
 <body>
   <!-- Top Nav -->
@@ -127,36 +128,50 @@
         <h2 class="section-title reveal">Projects</h2>
 
         <div class="work-grid">
-          <a class="work-card reveal" href="case-surprise-guest.html" style="--delay: 0;">
-            <div class="work-media gradient" aria-hidden="true"></div>
+
+          <!-- Surprise Podcast Guest -->
+          <a class="work-card reveal" href="podcast_guest.html" style="--delay: 0;">
+            <div class="work-media podcast-media" aria-hidden="true"></div>
             <div class="work-body">
               <h3>Surprise Podcast Guest</h3>
-              <p>Phased system: intake → selection → email → feedback. Built for reliability + admin clarity.</p>
+              <p>
+                An automated “surprise guest” system that handles everything end-to-end:
+                signup → selection → backups → emails.
+              </p>
               <span class="pill">Systems UX</span>
               <span class="pill">Automation</span>
             </div>
           </a>
 
+          <!-- DIML -->
           <a class="work-card reveal" href="case-diml-sober.html" style="--delay: 1;">
-            <div class="work-media neutral" aria-hidden="true"></div>
+            <div class="work-media diml-media" aria-hidden="true"></div>
             <div class="work-body">
               <h3>Day in My Life: Sober Edition</h3>
-              <p>Playable narrative game exploring addiction + recovery through interaction and reflection.</p>
+              <p>
+                A narrative 2D game about sobriety, told through everyday moments and
+                symbolic boss battles.
+              </p>
               <span class="pill">Game Dev</span>
               <span class="pill">Interaction</span>
             </div>
           </a>
 
-          <a class="work-card reveal" href="#" onclick="return false;" aria-disabled="true" style="--delay: 2;">
-            <div class="work-media neutral" aria-hidden="true"></div>
+          <!-- Book Devils -->
+          <a class="work-card reveal" href="book_devils.html" style="--delay: 2;">
+            <div class="work-media book-devils-media" aria-hidden="true"></div>
             <div class="work-body">
-              <h3>Charity: Water Landing Page</h3>
-              <p>Landing page targeting students with transparency-first messaging and clear conversion flow.</p>
+              <h3>Book Devils: Book reselling platform</h3>
+              <p>
+                A role-based desktop app that makes campus book resale focused on role routing, guardrails, and UI consistency.
+              </p>
               <span class="pill">UX</span>
-              <span class="pill">Frontend</span>
+              <span class="pill">Systems</span>
             </div>
           </a>
+
         </div>
+
       </div>
     </section>
 
@@ -248,27 +263,5 @@
       </div>
     </div>
   </footer>
-
-  <script>
-    // Update year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Scroll reveal animation
-    const reveals = document.querySelectorAll(".reveal");
-
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    reveals.forEach(el => observer.observe(el));
-  </script>
 </body>
 </html>

@@ -31,13 +31,13 @@
 
   /* ===================== SEMANTIC TOKENS ===================== */
   /* Backgrounds */
-  --bg: linear-gradient(180deg, #dcd9fd 0%, #9eabd8 40%, #7894cb 100%);
+  --bg: linear-gradient(180deg, #dcd9fd 0%, #bfcaf2 40%, #89a3d8 100%);
   --card: rgba(255, 255, 255, 0.84);
   
   /* Text colors */
   --text: var(--graphite);
-  --text-muted: rgba(27, 38, 79, 0.72);
-  --text-subtle: rgba(48, 43, 39, 0.78);
+  --text-muted: rgba(20, 30, 66, 0.72);
+  --text-subtle: rgba(11, 11, 10, 0.78);
   
   /* Lines & borders */
   --line: rgba(48, 43, 39, 0.12);

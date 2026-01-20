@@ -1,45 +1,28 @@
-<!-- case-day-in-my-life.html -->
+<!-- case-surprise-guest.html -->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Day in My Life: Sober Edition — Esha Sethi</title>
-  <meta name="description" content="A narrative-driven game about addiction, recovery, and the ongoing act of choosing yourself." />
+  <title>Surprise Podcast Guest Experience — Esha Sethi</title>
+  <meta name="description" content="A systems-based experience that automates podcast guest selection and onboarding without operational overhead." />
   
   <!-- Modular CSS Architecture -->
   <link rel="stylesheet" href="./css/styles.css" />
-<style>
-html, body {
-  height: 100%;
-}
+  <style>
+  :root{
+    --scroll-offset: 110px; /* adjust if you want */
+  }
 
-body {
-  margin: 0;
-  font-family: var(--font-sans);
-  color: var(--blue);
-  background:
-    radial-gradient(
-      1200px 800px at 20% -10%,
-      rgba(17, 47, 194, 0.35),
-      transparent 60%
-    ),
-    radial-gradient(
-      1000px 700px at 90% 30%,
-      rgba(180, 160, 255, 0.35),
-      transparent 65%
-    ),
-    linear-gradient(
-      180deg,
-      #6d85c2 0%,
-      #a9b6e8 30%,
-      #c4c8f2 55%,
-      #d7d9f7 75%,
-      #e9e9fb 100%
-    );
-  background-attachment: fixed;
-}
+  /* only apply to your case sections */
+  #overview, #problem, #context, #goals, #process, #solution, #outcome, #reflection{
+    scroll-margin-top: var(--scroll-offset);
+  }
 
+  /* keep smooth scroll */
+  html{
+    scroll-behavior: smooth;
+  }
 </style>
 </head>
 <script src="./js/site.js" defer></script>
@@ -62,20 +45,20 @@ body {
 
   <main>
     <!-- CASE STUDY HERO WITH VISUAL -->
-<section class="hero" style="
-  min-height: auto;
-  background: rgba(48, 43, 39, 0.88);
-  padding: 1.5rem 0 1.5rem;
-">
+    <section class="hero" style="
+      min-height: auto;
+      background: rgba(48, 43, 39, 0.88);
+      padding: 1.5rem 0 1.5rem;
+    ">
       <div class="container" style="max-width: 1000px;">
         <!-- Project Title & Meta -->
         <div style="margin-bottom: 1rem;">
-          <p class="kicker" style="color: rgba(245, 243, 245, 0.65); margin-bottom: 0.8rem;">UX Case Study • Systems Design • Interactive Narrative • Capstone Project</p>
+          <p class="kicker" style="color: rgba(245, 243, 245, 0.65); margin-bottom: 0.8rem;">Product / Experience Design • UX Systems • Automation</p>
           <h1 style="font-size: clamp(2rem, 4vw, 3.2rem); color: var(--paper); margin: 0 0 1rem; font-family: var(--font-serif); font-weight: 650; letter-spacing: -0.02em; line-height: 1.1;">
-            Day in My Life: Sober Edition
+            Surprise Podcast Guest Experience
           </h1>
           <p style="color: rgba(245, 243, 245, 0.75); font-size: 1.15rem; max-width: 65ch; margin: 0; line-height: 1.6;">
-            A narrative-driven game about addiction, recovery, and the ongoing act of choosing yourself.
+            A systems-based experience that allows podcast listeners to opt into a fair, automated selection process to participate as a live "surprise guest" — without adding operational overhead for the host.
           </p>
         </div>
 
@@ -91,19 +74,19 @@ body {
         ">
           <div>
             <p style="margin: 0 0 0.4rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(245, 243, 245, 0.45);">Role</p>
-            <p style="margin: 0; color: var(--paper); font-size: 1rem; font-weight: 500;">Concept & Core Idea, Systems & Mechanics Design, Programming, Narrative, UX Flow Design</p>
+            <p style="margin: 0; color: var(--paper); font-size: 1rem; font-weight: 500;">System Architecture, UX Design, Automation Engineering</p>
           </div>
           <div>
             <p style="margin: 0 0 0.4rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(245, 243, 245, 0.45);">Timeline</p>
-            <p style="margin: 0; color: var(--paper); font-size: 1rem; font-weight: 500;">1 year (Spring–Fall 2025)</p>
+            <p style="margin: 0; color: var(--paper); font-size: 1rem; font-weight: 500;">3.5 months (Aug–Nov 2024)</p>
           </div>
           <div>
             <p style="margin: 0 0 0.4rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(245, 243, 245, 0.45);">Tools</p>
-            <p style="margin: 0; color: var(--paper); font-size: 1rem; font-weight: 500;">Godot, GDScript, Photoshop</p>
+            <p style="margin: 0; color: var(--paper); font-size: 1rem; font-weight: 500;">Kit, Zapier, Google Sheets</p>
           </div>
           <div>
             <p style="margin: 0 0 0.4rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(245, 243, 245, 0.45);">Type</p>
-            <p style="margin: 0; color: var(--paper); font-size: 1rem; font-weight: 500;">Game Dev, Systems Design</p>
+            <p style="margin: 0; color: var(--paper); font-size: 1rem; font-weight: 500;">Systems UX, Automation</p>
           </div>
         </div>
 
@@ -130,29 +113,51 @@ body {
             <div class="carousel-slide active" style="
               position: absolute;
               inset: 0;
-              opacity: 0;
+              opacity: 1;
               transition: opacity 0.5s ease;
             ">
-              <img src="./assets/images/menu.png" alt="Day in My Life menu screen" style="width: 100%; height: 100%; object-fit: cover; display: block;" 
-                onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:rgba(245,243,245,0.50);text-align:center;background:radial-gradient(circle at 30% 40%, rgba(87, 108, 168, 0.15), transparent 60%),radial-gradient(circle at 70% 60%, rgba(39, 70, 144, 0.12), transparent 60%),linear-gradient(135deg, rgba(48, 43, 39, 0.04), rgba(48, 43, 39, 0.02));\'>Add screenshot: ./assets/images/menu.png</div>';">
+              <img src="./assets/images/gsheet.png" alt="Google Sheet setup view" style="width: 100%; height: 100%; object-fit: contain; object-position: center; display: block;"
+                onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:rgba(245,243,245,0.50);text-align:center;background:radial-gradient(circle at 30% 40%, rgba(87, 108, 168, 0.15), transparent 60%),radial-gradient(circle at 70% 60%, rgba(39, 70, 144, 0.12), transparent 60%),linear-gradient(135deg, rgba(48, 43, 39, 0.04), rgba(48, 43, 39, 0.02));\'>Add screenshot: ./assets/images/gsheet.png</div>';">
             </div>
+
             <div class="carousel-slide" style="
               position: absolute;
               inset: 0;
               opacity: 0;
               transition: opacity 0.5s ease;
             ">
-              <img src="./assets/images/gameplay.png" alt="Day in My Life gameplay" style="width: 100%; height: 100%; object-fit: cover; display: block;" 
-                onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:rgba(245,243,245,0.50);text-align:center;background:radial-gradient(circle at 30% 40%, rgba(87, 108, 168, 0.15), transparent 60%),radial-gradient(circle at 70% 60%, rgba(39, 70, 144, 0.12), transparent 60%),linear-gradient(135deg, rgba(48, 43, 39, 0.04), rgba(48, 43, 39, 0.02));\'>Add screenshot: ./assets/images/gameplay.png</div>';">
+              <img src="./assets/images/instructions.png" alt="System instructions overview" style="width: 100%; height: 100%; object-fit: contain; object-position: center; display: block;"
+                onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:rgba(245,243,245,0.50);text-align:center;background:radial-gradient(circle at 30% 40%, rgba(87, 108, 168, 0.15), transparent 60%),radial-gradient(circle at 70% 60%, rgba(39, 70, 144, 0.12), transparent 60%),linear-gradient(135deg, rgba(48, 43, 39, 0.04), rgba(48, 43, 39, 0.02));\'>Add screenshot: ./assets/images/instruction.png</div>';">
             </div>
+
             <div class="carousel-slide" style="
               position: absolute;
               inset: 0;
               opacity: 0;
               transition: opacity 0.5s ease;
             ">
-              <img src="./assets/images/invite.png" alt="Day in My Life party invitation" style="width: 100%; height: 100%; object-fit: cover; display: block;" 
-                onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:rgba(245,243,245,0.50);text-align:center;background:radial-gradient(circle at 30% 40%, rgba(87, 108, 168, 0.15), transparent 60%),radial-gradient(circle at 70% 60%, rgba(39, 70, 144, 0.12), transparent 60%),linear-gradient(135deg, rgba(48, 43, 39, 0.04), rgba(48, 43, 39, 0.02));\'>Add screenshot: ./assets/images/invite.png</div>';">
+              <img src="./assets/images/gsheet_main.png" alt="Google Sheet main tracker" style="width: 100%; height: 100%; object-fit: contain; object-position: center; display: block;"
+                onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:rgba(245,243,245,0.50);text-align:center;background:radial-gradient(circle at 30% 40%, rgba(87, 108, 168, 0.15), transparent 60%),radial-gradient(circle at 70% 60%, rgba(39, 70, 144, 0.12), transparent 60%),linear-gradient(135deg, rgba(48, 43, 39, 0.04), rgba(48, 43, 39, 0.02));\'>Add screenshot: ./assets/images/gsheet_main.png</div>';">
+            </div>
+
+            <div class="carousel-slide" style="
+              position: absolute;
+              inset: 0;
+              opacity: 0;
+              transition: opacity 0.5s ease;
+            ">
+              <img src="./assets/images/form.png" alt="Kit intake form" style="width: 100%; height: 100%; object-fit: contain; object-position: center; display: block;"
+                onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:rgba(245,243,245,0.50);text-align:center;background:radial-gradient(circle at 30% 40%, rgba(87, 108, 168, 0.15), transparent 60%),radial-gradient(circle at 70% 60%, rgba(39, 70, 144, 0.12), transparent 60%),linear-gradient(135deg, rgba(48, 43, 39, 0.04), rgba(48, 43, 39, 0.02));\'>Add screenshot: ./assets/images/form.png</div>';">
+            </div>
+
+            <div class="carousel-slide" style="
+              position: absolute;
+              inset: 0;
+              opacity: 0;
+              transition: opacity 0.5s ease;
+            ">
+              <img src="./assets/images/email.png" alt="Automated email sequence preview" style="width: 100%; height: 100%; object-fit: contain; object-position: center; display: block;"
+                onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:rgba(245,243,245,0.50);text-align:center;background:radial-gradient(circle at 30% 40%, rgba(87, 108, 168, 0.15), transparent 60%),radial-gradient(circle at 70% 60%, rgba(39, 70, 144, 0.12), transparent 60%),linear-gradient(135deg, rgba(48, 43, 39, 0.04), rgba(48, 43, 39, 0.02));\'>Add screenshot: ./assets/images/email.png</div>';">
             </div>
 
             <!-- Navigation Arrows -->
@@ -175,10 +180,11 @@ body {
               box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
               transition: all 0.2s ease;
               z-index: 10;
-            " onmouseover="this.style.transform='translateY(-50%) scale(1.1)'; this.style.background='rgba(255, 255, 255, 1)';" 
-               onmouseout="this.style.transform='translateY(-50%) scale(1)'; this.style.background='rgba(255, 255, 255, 0.90)';">
+            " onmouseover="this.style.transform='translateY(-50%) scale(1.1)'; this.style.background='rgba(255, 255, 255, 1)';"
+              onmouseout="this.style.transform='translateY(-50%) scale(1)'; this.style.background='rgba(255, 255, 255, 0.90)';">
               ←
             </button>
+
             <button id="nextBtn" style="
               position: absolute;
               right: 1rem;
@@ -198,8 +204,8 @@ body {
               box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
               transition: all 0.2s ease;
               z-index: 10;
-            " onmouseover="this.style.transform='translateY(-50%) scale(1.1)'; this.style.background='rgba(255, 255, 255, 1)';" 
-               onmouseout="this.style.transform='translateY(-50%) scale(1)'; this.style.background='rgba(255, 255, 255, 0.90)';">
+            " onmouseover="this.style.transform='translateY(-50%) scale(1.1)'; this.style.background='rgba(255, 255, 255, 1)';"
+              onmouseout="this.style.transform='translateY(-50%) scale(1)'; this.style.background='rgba(255, 255, 255, 0.90)';">
               →
             </button>
 
@@ -213,30 +219,11 @@ body {
               gap: 0.5rem;
               z-index: 10;
             ">
-              <span class="dot active" data-slide="0" style="
-                width: 10px;
-                height: 10px;
-                border-radius: 50%;
-                background: rgba(255, 255, 255, 0.90);
-                cursor: pointer;
-                transition: all 0.3s ease;
-              "></span>
-              <span class="dot" data-slide="1" style="
-                width: 10px;
-                height: 10px;
-                border-radius: 50%;
-                background: rgba(255, 255, 255, 0.40);
-                cursor: pointer;
-                transition: all 0.3s ease;
-              "></span>
-              <span class="dot" data-slide="2" style="
-                width: 10px;
-                height: 10px;
-                border-radius: 50%;
-                background: rgba(255, 255, 255, 0.40);
-                cursor: pointer;
-                transition: all 0.3s ease;
-              "></span>
+              <span class="dot active" data-slide="0" style="width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.90);cursor:pointer;transition:all 0.3s ease;"></span>
+              <span class="dot" data-slide="1" style="width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.40);cursor:pointer;transition:all 0.3s ease;"></span>
+              <span class="dot" data-slide="2" style="width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.40);cursor:pointer;transition:all 0.3s ease;"></span>
+              <span class="dot" data-slide="3" style="width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.40);cursor:pointer;transition:all 0.3s ease;"></span>
+              <span class="dot" data-slide="4" style="width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.40);cursor:pointer;transition:all 0.3s ease;"></span>
             </div>
           </div>
         </div>
@@ -245,22 +232,23 @@ body {
 
     <!-- SPECIFICATIONS SECTION -->
     <section class="section case-section">
-  <div class="container case-container">
-    <div class="case-layout">
-      
-      <!-- Left: Section Navigation -->
+      <div class="container case-container">
+        <div class="case-layout">
+          
+          <!-- Left: Section Navigation -->
           <div class="case-sidebar">
-        <h2 class="case-sidebar__title">Overview</h2>
-        <nav class="case-toc">
-          <a href="#problem" class="is-active">Problem</a>
-          <a href="#context">Context</a>
-          <a href="#goals">Goals</a>
-          <a href="#process">Process</a>
-          <a href="#solution">Solution</a>
-          <a href="#outcome">Outcome</a>
-          <a href="#reflection">Reflection</a>
-        </nav>
-      </div>
+            <h2 class="case-sidebar__title">Overview</h2>
+            <nav class="case-toc">
+              <a href="#overview" class="is-active">Overview</a>
+              <a href="#problem">Problem</a>
+              <a href="#context">Context</a>
+              <a href="#goals">Goals</a>
+              <a href="#process">Process</a>
+              <a href="#solution">Solution</a>
+              <a href="#outcome">Outcome</a>
+              <a href="#reflection">Reflection</a>
+            </nav>
+          </div>
 
           <!-- Right: Content Sections -->
           <div style="display: flex; flex-direction: column; gap: 4rem;">
@@ -268,13 +256,13 @@ body {
             <div id="overview">
               <h3 style="margin: 0 0 1rem; font-size: 1.8rem; color: var(--graphite); font-family: var(--font-serif);">Overview</h3>
               <p style="margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                Day in My Life: Sober Edition is a personal, narrative-driven game that explores addiction and recovery through metaphor, humor, and emotional honesty. Rather than framing recovery as a single victory or failure, the game treats it as a repetitive, nonlinear process—one that requires constant self-awareness and recommitment.
+                The Surprise Podcast Guest Experience enables podcast listeners to opt into a shared pool where they may be randomly selected to participate live in an episode alongside a featured expert — covering topics like healing, energy work, and mindfulness.
               </p>
               <p style="margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                This project was created as my Media Arts and Sciences Capstone and showcased publicly at the ASU Capstone Showcase on December 5, 2025. While it takes the form of a game, it was designed first as a system for understanding an emotional experience, using mechanics to reinforce meaning rather than spectacle.
+                The challenge was not just automating selection — it was designing a trust-based, fair, and emotionally safe experience that could run reliably without requiring the host to manually manage signups, tracking, or onboarding.
               </p>
               <p style="margin: 0; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                At its core, the game asks players to sit with discomfort, repetition, and imperfection—and to keep going anyway.
+                This system was built for Autumn Carter's podcast, handling end-to-end listener intake, randomized selection, backup management, and automated onboarding.
               </p>
             </div>
 
@@ -282,13 +270,16 @@ body {
             <div id="problem">
               <h3 style="margin: 0 0 1rem; font-size: 1.8rem; color: var(--graphite); font-family: var(--font-serif);">The Problem</h3>
               <p style="margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                Most media representations of addiction and recovery fall into extremes: either dramatic collapse followed by redemption, or a clean, linear success story. Both oversimplify what recovery actually looks like.
+                Before this system existed, there was no structured way for listeners to participate as live guests.
               </p>
               <p style="margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                In reality, recovery is ongoing, frustrating, and often invisible. Relapse is common, emotionally loaded, and rarely framed with empathy. There are very few interactive experiences that reflect this reality—especially ones that center internal struggle rather than external punishment.
+                If Autumn tried to do this manually: listeners had no clear way to opt in, there was no central place to track interest, onboarding would require individual emails, selection would be subjective or inconsistent, and the process would not scale beyond one-off attempts.
+              </p>
+              <p style="margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
+                Because the experience would be recorded and public, the risk of confusion, missed follow-ups, or selecting the wrong participant was especially high.
               </p>
               <p style="margin: 0; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                This project responds to that gap by reframing recovery as persistence, not perfection, and by treating relapse as part of the system rather than a failure state.
+                As a result: listeners missed out on a participatory experience, the podcast couldn't safely experiment with this format, and the operational burden made the idea unrealistic to run manually.
               </p>
             </div>
 
@@ -296,21 +287,17 @@ body {
             <div id="context">
               <h3 style="margin: 0 0 1rem; font-size: 1.8rem; color: var(--graphite); font-family: var(--font-serif);">Context & Constraints</h3>
               <p style="margin: 0 0 1.5rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                <strong>Context:</strong> Year-long capstone project with a public showcase, two-person team (myself + one artist), designed to be understandable and impactful in a short demo setting.
+                <strong>Stakeholders:</strong> Podcast listeners (primary user), Autumn (system operator), featured podcast guests
               </p>
               <div style="background: rgba(39, 70, 144, 0.05); border-left: 3px solid var(--blue); padding: 1.2rem 1.5rem; border-radius: 8px;">
                 <p style="margin: 0 0 0.8rem; font-weight: 600; color: var(--graphite);">Key Constraints</p>
                 <ul style="margin: 0; padding-left: 1.2rem; color: rgba(48, 43, 39, 0.85); line-height: 1.8;">
-                  <li>Time: limited to two semesters</li>
-                  <li>Team size: all systems, narrative, and programming handled by one person</li>
-                  <li>Scope: reduced from three planned levels to one fully polished level and boss</li>
-                  <li>Technical learning curve: first project built in Godot</li>
-                  <li>Emotional sensitivity: required careful balance between humor and respect</li>
+                  <li>System had to be built on Kit (already central to subscriber workflow)</li>
+                  <li>Zapier automation limited by available triggers and plan constraints</li>
+                  <li>Needed to be operable by Autumn without technical intervention</li>
+                  <li>Reliability mattered more than complexity — failures during live recordings were unacceptable</li>
                 </ul>
               </div>
-              <p style="margin: 1.5rem 0 0; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                These constraints shaped the project's direction, pushing it toward depth, clarity, and intentional design over scale.
-              </p>
             </div>
 
             <!-- Goals -->
@@ -318,32 +305,32 @@ body {
               <h3 style="margin: 0 0 1rem; font-size: 1.8rem; color: var(--graphite); font-family: var(--font-serif);">Goals & Success Criteria</h3>
               
               <p style="margin: 0 0 1.5rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                <strong>Emotional Goals:</strong>
+                <strong>Primary Goals:</strong>
               </p>
               <div style="display: grid; gap: 1rem; margin-bottom: 2rem;">
                 <div style="padding: 1rem 1.2rem; border-radius: 12px; background: linear-gradient(135deg, rgba(39, 70, 144, 0.06), rgba(87, 108, 168, 0.04)); border: 1px solid rgba(39, 70, 144, 0.12);">
-                  <p style="margin: 0; color: rgba(48, 43, 39, 0.90); font-size: 1.05rem;">→ Communicate that recovery is difficult, repetitive, and nonlinear</p>
+                  <p style="margin: 0; color: rgba(48, 43, 39, 0.90); font-size: 1.05rem;">→ Automate listener intake, selection, and onboarding</p>
                 </div>
                 <div style="padding: 1rem 1.2rem; border-radius: 12px; background: linear-gradient(135deg, rgba(39, 70, 144, 0.06), rgba(87, 108, 168, 0.04)); border: 1px solid rgba(39, 70, 144, 0.12);">
-                  <p style="margin: 0; color: rgba(48, 43, 39, 0.90); font-size: 1.05rem;">→ Normalize relapse without moralizing it</p>
+                  <p style="margin: 0; color: rgba(48, 43, 39, 0.90); font-size: 1.05rem;">→ Remove manual picking and emailing from host's workflow</p>
                 </div>
                 <div style="padding: 1rem 1.2rem; border-radius: 12px; background: linear-gradient(135deg, rgba(39, 70, 144, 0.06), rgba(87, 108, 168, 0.04)); border: 1px solid rgba(39, 70, 144, 0.12);">
-                  <p style="margin: 0; color: rgba(48, 43, 39, 0.90); font-size: 1.05rem;">→ Balance humor with seriousness in a way that feels human, not dismissive</p>
+                  <p style="margin: 0; color: rgba(48, 43, 39, 0.90); font-size: 1.05rem;">→ Enable a scalable, repeatable podcast format</p>
                 </div>
               </div>
 
               <p style="margin: 0 0 1.5rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                <strong>Design Goals:</strong>
+                <strong>Success Criteria:</strong>
               </p>
               <div style="display: grid; gap: 1rem;">
                 <div style="padding: 1rem 1.2rem; border-radius: 12px; background: linear-gradient(135deg, rgba(39, 70, 144, 0.06), rgba(87, 108, 168, 0.04)); border: 1px solid rgba(39, 70, 144, 0.12);">
-                  <p style="margin: 0; color: rgba(48, 43, 39, 0.90); font-size: 1.05rem;">→ Use mechanics to reinforce emotional meaning</p>
+                  <p style="margin: 0; color: rgba(48, 43, 39, 0.90); font-size: 1.05rem;">→ System consistently outputs one chosen listener + two backups, matched by topic</p>
                 </div>
                 <div style="padding: 1rem 1.2rem; border-radius: 12px; background: linear-gradient(135deg, rgba(39, 70, 144, 0.06), rgba(87, 108, 168, 0.04)); border: 1px solid rgba(39, 70, 144, 0.12);">
-                  <p style="margin: 0; color: rgba(48, 43, 39, 0.90); font-size: 1.05rem;">→ Externalize internal struggles through systems and enemy behavior</p>
+                  <p style="margin: 0; color: rgba(48, 43, 39, 0.90); font-size: 1.05rem;">→ Onboarding emails send automatically without manual work</p>
                 </div>
                 <div style="padding: 1rem 1.2rem; border-radius: 12px; background: linear-gradient(135deg, rgba(39, 70, 144, 0.06), rgba(87, 108, 168, 0.04)); border: 1px solid rgba(39, 70, 144, 0.12);">
-                  <p style="margin: 0; color: rgba(48, 43, 39, 0.90); font-size: 1.05rem;">→ Keep the experience readable and engaging in a public showcase context</p>
+                  <p style="margin: 0; color: rgba(48, 43, 39, 0.90); font-size: 1.05rem;">→ Experience feels fair, clear, and trustworthy for listeners</p>
                 </div>
               </div>
             </div>
@@ -355,12 +342,12 @@ body {
               <div style="display: flex; flex-direction: column; gap: 3rem;">
                 <!-- Discovery -->
                 <div>
-                  <h4 style="margin: 0 0 0.8rem; font-size: 1.3rem; color: var(--blue);">01 — Discovery & Framing</h4>
+                  <h4 style="margin: 0 0 0.8rem; font-size: 1.3rem; color: var(--blue);">01 — Discovery & Mapping</h4>
                   <p style="margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                    The project began with research into addiction, relapse, and emotional regulation, alongside reflection on lived experience. Instead of starting with mechanics, I started by mapping emotional states—shame, temptation, overwhelm, self-awareness—and exploring how they could be translated into systems.
+                    I mapped the full conceptual flow from listener interest to live participation and identified where manual approaches would break: no reliable way to track interest by topic, no backup plan if a chosen listener dropped out, and high risk of missed communication.
                   </p>
                   <p style="margin: 0; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                    The house party setting was chosen deliberately: a familiar environment where alcohol is normalized and opting out feels visible and isolating. As the game progresses, this environment becomes increasingly abstract, mirroring internal emotional distortion.
+                    This led to designing primary and backup selections as a core requirement, not an afterthought.
                   </p>
                 </div>
 
@@ -368,13 +355,10 @@ body {
                 <div>
                   <h4 style="margin: 0 0 0.8rem; font-size: 1.3rem; color: var(--blue);">02 — Design Decisions</h4>
                   <p style="margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                    <strong>Symbolic over literal:</strong> Enemies are exaggerated manifestations of internal and social pressure. Jocks throw red solo cups to represent normalized drinking culture, druggies throw pill bottles as temptation, and mean girls attack with words, embodying internalized stigma.
+                    Key decisions were driven by experience design, not tools:
                   </p>
                   <p style="margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                    <strong>Tone: playful, but not trivial:</strong> Humor functions as a coping language, not a joke. The game allows players to feel discomfort and levity at the same time—reflecting how many people navigate difficult realities.
-                  </p>
-                  <p style="margin: 0; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                    <strong>Core mechanic choice:</strong> The final boss can only be defeated using the Mirror Shard, a mechanic that forces confrontation with the self. Traditional combat alone is ineffective. Awareness and reflection are required to move forward.
+                    <strong>Randomized selection</strong> ensured fairness and avoided bias. <strong>Backup guests</strong> increased reliability for live recordings. <strong>Separation of intake, selection, and onboarding</strong> made the system easier to operate and debug. <strong>Partial automation</strong> allowed Autumn to choose episode topics intentionally while letting the system handle everything else.
                   </p>
                 </div>
 
@@ -382,10 +366,10 @@ body {
                 <div>
                   <h4 style="margin: 0 0 0.8rem; font-size: 1.3rem; color: var(--blue);">03 — Iteration & Testing</h4>
                   <p style="margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                    Early enemy AI relied on simple follow/patrol logic, which became unmanageable as complexity increased. I refactored enemy behavior into a state machine with multiple states, improving modularity and tuning.
+                    Early versions revealed reliability issues: Zapier triggers failed when events occurred too close together, data updates were not consistently recognized as "new events," and randomization logic worked mathematically but failed operationally.
                   </p>
                   <p style="margin: 0; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                    Playtesting revealed that players needed time to adjust, which aligned with the game's core message. That friction remained by design.
+                    The system became reliable after introducing timestamp-based triggers down to the millisecond, restructuring how and when rows were considered "new," and simplifying trigger conditions based on how Zapier actually listens for events.
                   </p>
                 </div>
               </div>
@@ -393,38 +377,31 @@ body {
 
             <!-- Solution -->
             <div id="solution">
-              <h3 style="margin: 0 0 1rem; font-size: 1.8rem; color: var(--graphite); font-family: var(--font-serif);">The System</h3>
+              <h3 style="margin: 0 0 1rem; font-size: 1.8rem; color: var(--graphite); font-family: var(--font-serif);">End-to-End System</h3>
               <p style="margin: 0 0 1.5rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                The game is a 2D top-down experience centered on managing sobriety as a finite, renewable resource.
+                <strong>Flow:</strong> Listener signs up through Kit form → data tagged and synced to Google Sheets → Autumn selects topic for upcoming episode → system filters pool → one primary + two backups randomly selected → tags applied in Kit → onboarding emails sent automatically → system resets for next cycle.
               </p>
               
               <div style="background: var(--graphite); color: var(--paper); padding: 2rem; border-radius: 16px; margin: 2rem 0;">
-                <p style="margin: 0 0 1rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(245, 243, 245, 0.60);">Key Mechanics</p>
+                <p style="margin: 0 0 1rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(245, 243, 245, 0.60);">Key Components</p>
                 <ul style="margin: 0; padding-left: 1.2rem; line-height: 1.9;">
-                  <li>Sobriety Meter: drains under stress and pressure</li>
-                  <li>Grounding Tasks: water, fresh air, and private space restore stability</li>
-                  <li>Enemies: represent internal and social triggers</li>
-                  <li>Mirror Shard: required to defeat the final boss through self-recognition</li>
-                  <li>Relapse State: resets progress without judgment</li>
+                  <li><strong>Listener Intake Form (Kit)</strong> — allows listeners to opt in and select up to three interest areas</li>
+                  <li><strong>Google Sheets Tracker</strong> — central source of truth for filtering, randomization, and selection logic</li>
+                  <li><strong>Randomization Logic</strong> — mathematical selection using formulas to ensure fairness</li>
+                  <li><strong>Email Sequences (Kit)</strong> — automated, sequenced emails for confirmation, selection, backups, and prep</li>
+                  <li><strong>Tag-Based State Management</strong> — keeps listener status synchronized across systems</li>
                 </ul>
               </div>
-
-              <p style="margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                <strong>Core Loop:</strong> Face temptation → manage sobriety → complete tasks → confront the self → repeat
-              </p>
-              <p style="margin: 0; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                Progress strengthens the player's capacity to continue, rather than eliminating difficulty entirely.
-              </p>
             </div>
 
             <!-- Outcome -->
             <div id="outcome">
               <h3 style="margin: 0 0 1rem; font-size: 1.8rem; color: var(--graphite); font-family: var(--font-serif);">Outcome & Impact</h3>
               <p style="margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                Fully playable demo with a complete level and boss encounter, presented at the ASU Capstone Showcase with strong emotional engagement from classmates, faculty, and attendees.
+                <strong>Current state:</strong> Built, tested, and ready to run for upcoming podcast episodes. End-to-end walkthrough video confirms system reliability.
               </p>
-              <p style="margin: 0; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                Players understood the message, connected emotionally, and engaged with the humor while respecting the seriousness of the topic. Many asked questions about addiction and recovery after playing.
+              <p style="margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
+                <strong>Impact:</strong> Eliminated the need to manually track interest, choose participants, or send onboarding emails. Reduced cognitive load for the host during episode planning. Enabled a new, more communal and interactive podcast format.
               </p>
             </div>
 
@@ -432,13 +409,13 @@ body {
             <div id="reflection">
               <h3 style="margin: 0 0 1rem; font-size: 1.8rem; color: var(--graphite); font-family: var(--font-serif);">Reflection & Learnings</h3>
               <p style="margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                This project reinforced that UX extends beyond interfaces—systems are interfaces. Emotional friction can be intentional and meaningful. Iteration and playtesting are where clarity emerges.
+                This project reinforced that UX is not limited to screens. I was designing trust (listeners needed to feel the process was fair), safety (participation involved vulnerability and public sharing), and reliability (live recordings leave no room for silent failures).
               </p>
               <p style="margin: 0 0 1rem; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                If I were to rebuild this project, I would improve visual consistency, expand accessibility considerations, and refine system polish.
+                <strong>Key skills strengthened:</strong> Systems thinking across tools, translating human experience into logic, anticipating edge cases in real-world workflows, and designing for non-technical operators.
               </p>
               <p style="margin: 0; font-size: 1.05rem; line-height: 1.7; color: rgba(48, 43, 39, 0.85);">
-                More than anything, this project represents how I work: iteratively, empathetically, and with respect for complexity. I'm most effective when I can test, learn, and refine—and when I'm designing systems that help people understand experiences that don't fit neatly into linear frameworks.
+                <strong>What this project shows:</strong> I can design and build complex, human-centered systems. I work effectively in phases and structure. I think beyond interfaces to the full experience lifecycle.
               </p>
             </div>
           </div>

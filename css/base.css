@@ -11,48 +11,43 @@ html{
 
 body{
   margin: 0;
-  background: 
-    linear-gradient(to bottom, 
-      var(--bg) 0%, 
-      var(--bg) 50%, 
-      rgba(252, 251, 252, 0.98) 100%
-    );
   min-height: 100vh;
   color: var(--text);
   font-family: var(--font-sans);
   line-height: 1.6;
   position: relative;
   overflow-x: hidden;
+
+  /* Seamless gradient background */
+  background: var(--bg);
 }
 
-/* Global wave background */
+/* ===================== GLOBAL WAVES ===================== */
 body::before{
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 120vh;
+  inset: 0;
   pointer-events: none;
   z-index: 0;
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="none"><path d="M0,180 C220,90 380,250 600,180 C820,110 980,250 1200,165 L1200,0 L0,0 Z" fill="rgba(39, 70, 144, 0.28)"/><path d="M0,330 C220,220 380,420 600,315 C820,210 980,405 1200,300 L1200,0 L0,0 Z" fill="rgba(87, 108, 168, 0.22)"/><path d="M0,510 C220,390 380,570 600,480 C820,390 980,555 1200,465 L1200,0 L0,0 Z" fill="rgba(27, 38, 79, 0.16)"/></svg>');
-  background-size: 100% 100%;
-  background-position: top center;
+
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201200%20500'%20preserveAspectRatio='none'%3E%3Cpath%20d='M0,120%20C220,60%20380,170%20600,120%20C820,70%20980,170%201200,110%20L1200,0%20L0,0%20Z'%20fill='%231B264F'%20fill-opacity='0.18'/%3E%3Cpath%20d='M0,220%20C220,150%20380,280%20600,210%20C820,140%20980,270%201200,200%20L1200,0%20L0,0%20Z'%20fill='%23274690'%20fill-opacity='0.14'/%3E%3Cpath%20d='M0,340%20C220,260%20380,380%20600,320%20C820,260%20980,370%201200,310%20L1200,0%20L0,0%20Z'%20fill='%23576CA8'%20fill-opacity='0.11'/%3E%3C/svg%3E");
+
   background-repeat: no-repeat;
+  background-position: top center;
+
+  background-size: 100% 55vh;
 }
 
-/* Global grain texture */
+/* ===================== GLOBAL GRAIN ===================== */
 body::after{
   content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 0;
   pointer-events: none;
   z-index: 1;
   opacity: 0.45;
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="3" stitchTiles="stitch"/></filter><rect width="400" height="400" filter="url(%23n)" opacity="0.35"/></svg>');
+
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='400'%20height='400'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='1.2'%20numOctaves='3'%20stitchTiles='stitch'/%3E%3C/filter%3E%3Crect%20width='400'%20height='400'%20filter='url(%23n)'%20opacity='0.35'/%3E%3C/svg%3E");
   background-size: 200px 200px;
   mix-blend-mode: overlay;
 }
