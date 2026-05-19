@@ -142,53 +142,71 @@
       <div class="container">
         <h2 class="section-title reveal">Projects</h2>
 
-        <div class="work-grid">
+        <div class="work-carousel">
+          <div class="work-carousel-track">
+            <div class="work-carousel-slides" id="workSlides">
 
-          <!-- Surprise Podcast Guest -->
-          <a class="work-card reveal" href="podcast_guest.html" style="--delay: 0;">
-            <div class="work-media podcast-media" aria-hidden="true"></div>
-            <div class="work-body">
-              <h3>Surprise Podcast Guest</h3>
-              <p>
-                Lets podcast listeners become surprise guests and receive personalized 
-                expert guidance on-air. Automated the full coordination workflow (signup → selection → backups → emails) so the host can focus on creative decisions.
-              </p>
-              <span class="pill">Systems UX</span>
-              <span class="pill">Automation</span>
+              <a class="work-card" href="podcast_guest.html">
+                <div class="work-media podcast-media" aria-hidden="true"></div>
+                <div class="work-body">
+                  <h3>Surprise Podcast Guest</h3>
+                  <p>
+                    Lets podcast listeners become surprise guests and receive personalized 
+                    expert guidance on-air. Automated the full coordination workflow (signup → selection → backups → emails) so the host can focus on creative decisions.
+                  </p>
+                  <span class="pill">Systems UX</span>
+                  <span class="pill">Automation</span>
+                </div>
+              </a>
+
+              <a class="work-card" href="diml.html">
+                <div class="work-media diml-media" aria-hidden="true"></div>
+                <div class="work-body">
+                  <h3>Day in My Life: Sober Edition</h3>
+                  <p>
+                    A narrative 2D game about sobriety, told through everyday moments and
+                    symbolic boss battles. Iterated through peer playtesting and presented 
+                    at a showcase—players praised its honest emotional portrayal.
+                  </p>
+                  <span class="pill">Game Dev</span>
+                  <span class="pill">Interaction</span>
+                </div>
+              </a>
+
+              <a class="work-card" href="book_devils.html">
+                <div class="work-media book-devils-media" aria-hidden="true"></div>
+                <div class="work-body">
+                  <h3>Book Devils</h3>
+                  <p>
+                    A role-based desktop app for campus book resale. Designed transaction 
+                    flows for buyers, sellers, and admins—reducing listing errors by enforcing 
+                    guardrails and consistent UI patterns.
+                  </p>
+                  <span class="pill">UX</span>
+                  <span class="pill">Systems</span>
+                </div>
+              </a>
+
+              <a class="work-card" href="name_the_feeling.html">
+                <div class="work-media ntf-media" aria-hidden="true"></div>
+                <div class="work-body">
+                  <h3>Name the Feeling</h3>
+                  <p>
+                    An emotion categorization app that guides users from broad emotional 
+                    states to specific ones. Designed in Figma with multi-select states 
+                    and iterative prompts to reduce cognitive load.
+                  </p>
+                  <span class="pill">UX</span>
+                  <span class="pill">Figma</span>
+                </div>
+              </a>
+
             </div>
-          </a>
+          </div>
 
-          <!-- DIML -->
-          <a class="work-card reveal" href="diml.html" style="--delay: 1;">
-            <div class="work-media diml-media" aria-hidden="true"></div>
-            <div class="work-body">
-              <h3>Day in My Life: Sober Edition</h3>
-              <p>
-                A narrative 2D game about sobriety, told through everyday moments and
-                symbolic boss battles. Iterated through peer playtesting and presented 
-                at a showcase—players praised its honest emotional portrayal.
-              </p>
-              <span class="pill">Game Dev</span>
-              <span class="pill">Interaction</span>
-            </div>
-          </a>
-
-          <!-- Book Devils -->
-          <a class="work-card reveal" href="book_devils.html" style="--delay: 2;">
-            <div class="work-media book-devils-media" aria-hidden="true"></div>
-            <div class="work-body">
-              <h3>Book Devils</h3>
-              <p>
-                A role-based desktop app for campus book resale. Designed transaction 
-                flows for buyers, sellers, and admins—reducing listing errors by enforcing 
-                guardrails and consistent UI patterns.
-              </p>
-              <span class="pill">UX</span>
-              <span class="pill">Systems</span>
-            </div>
-          </a>
-
-        </div>
+      <button class="work-carousel-btn" id="workPrev" aria-label="Previous project">←</button>
+      <button class="work-carousel-btn" id="workNext" aria-label="Next project">→</button>
+      <div class="work-carousel-dots" id="workDots"></div>
 
       </div>
     </section>
@@ -239,7 +257,7 @@
 
           <div class="contact-foot">
             <span class="micro">📍 Tempe, AZ</span>
-            <span class="micro">🎓 Graduating: May 2026</span>
+            <span class="micro">🎓 Graduated: May 2026</span>
             <span class="micro">💼 Seeking: Full-time roles starting Summer 2026</span>
           </div>
         </div>

@@ -58,7 +58,7 @@
 
 /* ===================== SECTIONS ===================== */
 .section{
-  padding: 3rem 0;
+  padding: 2rem 0;
   position: relative;
 }
 
@@ -200,13 +200,91 @@
   opacity: 0.48;
 }
 
-/* ===================== WORK GRID ===================== */
-.work-grid{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.2rem;
-  justify-items: center;
+/* ===================== WORK CAROUSEL ===================== */
+.work-carousel{
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.work-carousel-track{
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.work-carousel-slides{
+  display: flex;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.work-carousel-slides .work-card{
+  min-width: 100%;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.work-carousel-btn{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--line);
+  color: var(--graphite);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+  z-index: 2;
+}
+
+.work-carousel-btn:hover{
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 12px rgba(27, 38, 79, 0.12);
+}
+
+#workPrev{
+  left: -56px;
+}
+
+#workNext{
+  right: -56px;
+}
+
+/* nudge transform to keep vertical centering after hover */
+#workPrev:hover{ transform: translateY(-50%) translateX(-2px); }
+#workNext:hover{ transform: translateY(-50%) translateX(2px); }
+
+.work-carousel-dots{
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.2rem;
+}
+
+.work-carousel-dots .cdot{
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(48, 43, 39, 0.25);
+  cursor: pointer;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+  border: none;
+  padding: 0;
+}
+
+.work-carousel-dots .cdot.active{
+  background: var(--blue);
+  transform: scale(1.25);
 }
 
 /* ===================== CONTACT GRID ===================== */
@@ -309,10 +387,6 @@
 
   .photo-caption{
     justify-content: flex-start;
-  }
-
-  .work-grid{
-    grid-template-columns: 1fr;
   }
 
   .contact-grid{

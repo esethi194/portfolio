@@ -258,12 +258,21 @@
 .diml-media{
   background-image: url('../assets/images/menu.png');
   background-size: cover;
+  background-position: center 2px;
+  background-color: rgba(0, 0, 0, 0.75);
 }
 
 .book-devils-media{
   background-image: url('../assets/images/logo.png');
   background-size: contain;
   background-color: rgba(255,255,255,0.75);
+}
+
+.ntf-media {
+  background-image: url('../assets/images/ntf_logo.png');
+  background-size: contain;
+  background-position: center;
+  background-color: #ffffff;
 }
 
 .work-card:hover .work-media{
@@ -523,7 +532,7 @@
 }
 /* ===================== CONTACT COMPONENTS ===================== */
 #contact.section-tight{
-  padding-top: 2rem;
+  padding-top: .2 rem;
   padding-bottom: 2rem;
 }
 

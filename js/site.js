@@ -189,10 +189,42 @@ function initCaseToc() {
 }
 
 
+// ---------- work carousel ----------
+  function initWorkCarousel() {
+    const slides = document.getElementById('workSlides');
+    const dotsContainer = document.getElementById('workDots');
+    const prevBtn = document.getElementById('workPrev');
+    const nextBtn = document.getElementById('workNext');
+    if (!slides) return;
+
+    const cards = Array.from(slides.querySelectorAll('.work-card'));
+    let current = 0;
+
+    cards.forEach((_, i) => {
+      const d = document.createElement('button');
+      d.className = 'cdot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Go to project ' + (i + 1));
+      d.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(d);
+    });
+
+    function goTo(n) {
+      current = (n + cards.length) % cards.length;
+      slides.style.transform = `translateX(-${current * 100}%)`;
+      dotsContainer.querySelectorAll('.cdot').forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+      });
+    }
+
+    prevBtn.addEventListener('click', () => goTo(current - 1));
+    nextBtn.addEventListener('click', () => goTo(current + 1));
+  }
+
   // ---------- run ----------
   // (Using defer in HTML means DOM is ready here)
   setYear();
   initReveal();
   initCarousel();
   initCaseToc();
+  initWorkCarousel();
 })();
