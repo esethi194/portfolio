@@ -200,17 +200,32 @@ function initCaseToc() {
     const cards = Array.from(slides.querySelectorAll('.work-card'));
     let current = 0;
 
-    cards.forEach((_, i) => {
-      const d = document.createElement('button');
-      d.className = 'cdot' + (i === 0 ? ' active' : '');
-      d.setAttribute('aria-label', 'Go to project ' + (i + 1));
-      d.addEventListener('click', () => goTo(i));
-      dotsContainer.appendChild(d);
-    });
+    function visibleCount() {
+      return window.innerWidth <= 980 ? 1 : 3;
+    }
+
+    function maxIndex() {
+      return Math.max(0, cards.length - visibleCount());
+    }
+
+    function buildDots() {
+      dotsContainer.innerHTML = '';
+      const count = maxIndex() + 1;
+      for (let i = 0; i < count; i++) {
+        const d = document.createElement('button');
+        d.className = 'cdot' + (i === 0 ? ' active' : '');
+        d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        d.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(d);
+      }
+    }
 
     function goTo(n) {
-      current = (n + cards.length) % cards.length;
-      slides.style.transform = `translateX(-${current * 100}%)`;
+      current = ((n % cards.length) + cards.length) % cards.length;
+      if (current > maxIndex()) current = 0;
+      const cardWidth = cards[0].offsetWidth;
+      const gap = 19.2;
+      slides.style.transform = `translateX(-${current * (cardWidth + gap)}px)`;
       dotsContainer.querySelectorAll('.cdot').forEach((d, i) => {
         d.classList.toggle('active', i === current);
       });
@@ -218,6 +233,13 @@ function initCaseToc() {
 
     prevBtn.addEventListener('click', () => goTo(current - 1));
     nextBtn.addEventListener('click', () => goTo(current + 1));
+
+    buildDots();
+
+    window.addEventListener('resize', () => {
+      buildDots();
+      goTo(Math.min(current, maxIndex()));
+    });
   }
 
   // ---------- run ----------
